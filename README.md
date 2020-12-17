@@ -22,3 +22,6 @@ func main() {
 	fmt.Println("The 1st color in RGB is:", r, g, b)
 }
 ```
+
+# License
+[BSD 3-Clause](LICENSE)
