@@ -11,7 +11,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/PinwheelSystem/bitmap"
+	"github.com/PinwheelSystem/PaletteNom"
 )
 
 func main() {
