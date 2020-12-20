@@ -16,7 +16,10 @@ import (
 
 func main() {
 	palettelib := palettenom.New()
-	colors := palettelib.Load("palette.png")
+	colors, err := palettelib.Load("palette.png")
+	if err != nil {
+		panic(err)
+	}
 
 	r, g, b, _ := colors[0].RGBA()
 	fmt.Println("The 1st color in RGB is:", r, g, b)

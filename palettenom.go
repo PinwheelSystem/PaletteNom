@@ -1,4 +1,4 @@
-// PaletteNom loads a 64 color palette from a 8x8 image.
+// PaletteNom loads a 64 color palette from a 8x8 image
 package palettenom
 
 import (
