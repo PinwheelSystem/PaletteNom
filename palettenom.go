@@ -5,6 +5,7 @@ import (
 	"os"
 	"image"
 	"image/color"
+	"errors"
 
 	_ "image/png"
 	_ "golang.org/x/image/bmp"
@@ -30,7 +31,8 @@ func (p *PaletteNom) Load(filename string) ([]color.Color, error) {
 		return nil, err
 	}
 
-	if image.Width > 64 || image.Height > 64 {
+	b := image.Bounds().Max
+	if b.X > 64 || b.Y > 64 {
 		return nil, errors.New("palette image must be 8x8")
 	}
 
