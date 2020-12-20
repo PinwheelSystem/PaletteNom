@@ -22,16 +22,16 @@ func New() PaletteNom {
 func (p *PaletteNom) Load(filename string) ([]color.Color, error) {
 	file, err := os.Open(filename)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	image, _, err := image.Decode(file)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	if image.Width > 64 || image.Height > 64 {
-		errors.New("palette image must be 8x8")
+		return nil, errors.New("palette image must be 8x8")
 	}
 
 	for y := 0; y < 8; y++ {
@@ -41,5 +41,5 @@ func (p *PaletteNom) Load(filename string) ([]color.Color, error) {
 		}
 	}
 
-	return p.Palette
+	return p.Palette, nil
 }
